@@ -7,8 +7,9 @@
 
 set -e
 
-echo "==> 创建 Python 虚拟环境"
-python3 -m venv .venv
+echo "==> 创建 Python 虚拟环境(用 python3.11,DeepEval/Ragas 要求 3.10+)"
+PYTHON_BIN="${PYTHON_BIN:-python3.11}"
+"$PYTHON_BIN" -m venv .venv
 source .venv/bin/activate
 
 echo "==> 升级 pip"
